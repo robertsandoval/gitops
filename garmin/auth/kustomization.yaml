@@ -1,0 +1,9 @@
+resources:
+- ../../base
+patchesJson6902:
+  - target:
+      version: v1
+      group: rbac.authorization.k8s.io
+      kind: ClusterRoleBinding
+      name: platform-admins
+    path: crb.yaml

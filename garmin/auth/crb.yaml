@@ -2,5 +2,5 @@
   path: /subjects/-
   value:
     kind: Group
-    name: wl00-administrators # Name is case sensitive
+    name: base_group # Name is case sensitive
     apiGroup: rbac.authorization.k8s.io
