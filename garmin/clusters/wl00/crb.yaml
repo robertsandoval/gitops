@@ -1,0 +1,6 @@
+- op: add
+  path: /subjects/-
+  value:
+    kind: Group
+    name: administrators # Name is case sensitive
+    apiGroup: rbac.authorization.k8s.io
