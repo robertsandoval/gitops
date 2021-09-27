@@ -1,5 +1,5 @@
 resources:
-- ../../../base
+- ../../base
 patchesJson6902:
   - target:
       version: v1
