@@ -35,7 +35,7 @@ spec:
       containers:
         - name: httpd-sample
           image: >-
-            image-registry.openshift-image-registry.svc:5000/atest/httpd-sample@sha256:2623160c600effe40927290405abd408c506fc8563fef12a83828850f6bf022e
+            registry.redhat.io/rhscl/httpd-24-rhel7:2.4-147
           ports:
             - containerPort: 8080
               protocol: TCP
