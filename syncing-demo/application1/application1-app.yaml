@@ -7,7 +7,6 @@ spec:
   destination:
     name: wl00
     namespace: atest
-    server: 'https://api.wl00.sandbox1471.opentlc.com:6443'
   project: sync-demo
   source:
     path: syncing-demo/application1/base
