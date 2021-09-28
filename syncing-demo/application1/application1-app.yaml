@@ -1,8 +1,19 @@
-kind: ConfigMap
-apiVersion: v1
+apiVersion: argoproj.io/v1alpha1
+kind: Application
 metadata:
-  name: helloocp
-  namespace: atest
-data:
-  hello.txt: |
-    Hello From OpenShift!
+  name: application1-app
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: wl00
+    namespace: atest
+    server: 'https://api.wl00.sandbox1471.opentlc.com:6443'
+  project: sync-demo
+  source:
+    path: syncing-demo/application1/base
+    repoURL: 'https://github.com/robertsandoval/gitops.git'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+

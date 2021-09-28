@@ -1,0 +1,27 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: bgd
+  namespace: openshift-gitops
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: wl00
+            url: https://api.wl00.sandbox1471.opentlc.com:6443
+  template:
+    metadata:
+      name: '{{cluster}}-bgd'
+    spec:
+      project: sync-demo
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      source:
+        repoURL: https://github.com/robertsandoval/gitops.git
+        targetRevision: master
+        path: /syncing-demo/application1/base
+      destination:
+        server: '{{url}}'
+        namespace: atest
