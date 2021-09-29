@@ -7,7 +7,7 @@ spec:
   destination:
     name: wl00
     namespace: application1-httpd
-  project: sync-demo
+  project: applications
   source:
     path: applications/application1/overlay
     repoURL: 'https://github.com/robertsandoval/gitops.git'

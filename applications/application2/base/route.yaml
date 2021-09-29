@@ -1,10 +1,11 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: httpd
-  namespace: application1
+  name: httpd-application1
+  namespace: application1-httpd
   labels:
-    app: httpd
+    app: applicaton1
+    app.kubernetes.io/instance: application1
 spec:
   path: /hello.txt
   to:

@@ -6,8 +6,8 @@ metadata:
 spec:
   destination:
     name: wl00
-    namespace: application1-httpd
-  project: sync-demo
+    namespace: application1
+  project: applications
   source:
     path: applications/application1/base
     repoURL: 'https://github.com/robertsandoval/gitops.git'
