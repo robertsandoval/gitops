@@ -13,5 +13,6 @@ spec:
     repoURL: 'https://github.com/robertsandoval/gitops.git'
   syncPolicy:
     automated:
+      prune: true
       selfHeal: true
 
