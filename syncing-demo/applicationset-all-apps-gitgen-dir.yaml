@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: demo-apps-gitgen-dir
+  namespace: openshift-gitops
+spec:
+  generators:
+    - git:
+        repoURL: https://github.com/robertsandoval/gitops.git
+        revision: master
+        directories:
+          - path: syncing-demo/*
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: sync-demo
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      source:
+        repoURL: https://github.com/robertsandoval/gitops.git
+        targetRevision: master
+        path: '{{path}}/base'
+      destination:
+        server: https://api.wl00.sandbox1471.opentlc.com:6443
+        namespace: '{{path.basename}}-httpd'

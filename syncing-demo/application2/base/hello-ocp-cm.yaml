@@ -2,7 +2,7 @@ kind: ConfigMap
 apiVersion: v1
 metadata:
   name: helloocp
-  namespace: atest2
+  namespace: application2-httpd
 data:
   hello.txt: |
     Hello From OpenShift!

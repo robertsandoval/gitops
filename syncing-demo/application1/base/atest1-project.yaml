@@ -1,7 +1,7 @@
 kind: Project
 apiVersion: project.openshift.io/v1
 metadata:
-  name: atest1
+  name: application1-httpd
 spec:
   finalizers:
     - kubernetes

@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
   name: httpd-sample
-  namespace: atest1
+  namespace: application1-httpd
 spec:
   replicas: 1
   selector:
