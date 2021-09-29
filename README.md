@@ -1,12 +1,10 @@
-Nuances to ApplicationSet Generators
+##Nuances to ApplicationSet Generators
 
 * unable to set cascade options. Will always be cascade=true
 
 
-Cluster Generator
-Use Case:
-
-I have a single application I want to deploy multiple clusters
+#Cluster Generator
+Use Case: I have a single application I want to deploy multiple clusters
 
 1 Application -> 0..N Clusters  
 
@@ -21,9 +19,9 @@ Can add additional parameters via:
 
 Considerations: Managed via labels in a cluster specific secret.
 
-Git Generator - Directory
+# Git Generator - Directory
 
-I have a multiple applications I want to deploy to a single cluster
+Use Case: I have a multiple applications I want to deploy to a single cluster
 
 1..N Applications -> 1 Cluster  
 
@@ -53,4 +51,4 @@ Parameters:
 * {{path.basename}}: For any directory path within the Git repository that matches the path wildcard, the right-most path name is extracted (e.g. /directory/directory2 would produce directory2).
 
 
-Git Generator - File  
+# Git Generator - File  
