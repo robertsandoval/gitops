@@ -1,6 +1,7 @@
 ## Nuances to ApplicationSet Generators
 
 * unable to set cascade options. Will always be cascade=true
+Actually need to check this. removing prune may have done the equivalent of cascade=false
 
 
 # Cluster Generator
