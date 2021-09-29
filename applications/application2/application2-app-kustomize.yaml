@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application2
+  name: application2-kustomize
   namespace: openshift-gitops
 spec:
   destination:
@@ -9,10 +9,9 @@ spec:
     namespace: application2
   project: applications
   source:
-    path: applications/application1/default
+    path: applications/application2/kustomize/overlay
     repoURL: 'https://github.com/robertsandoval/gitops.git'
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-
