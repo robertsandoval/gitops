@@ -1,59 +1,50 @@
 kind: Deployment
-  apiVersion: apps/v1
-  metadata:
-    annotations:
-      alpha.image.policy.openshift.io/resolve-names: '*'
-      app.openshift.io/vcs-ref: ''
-      app.openshift.io/vcs-uri: 'https://github.com/sclorg/httpd-ex.git'
-      deployment.kubernetes.io/revision: '2'
-      image.openshift.io/triggers: >-
-        [{"from":{"kind":"ImageStreamTag","name":"httpd-sample:latest","namespace":"atest"},"fieldPath":"spec.template.spec.containers[?(@.name==\"httpd-sample\")].image","pause":"false"}]
-      openshift.io/generated-by: OpenShiftWebConsole
-    name: httpd-sample
-    uid: d4d207d0-3aaf-474a-ab46-eddc1cbfa079
-    namespace: atest
-    labels:
+apiVersion: apps/v1
+metadata:
+  name: httpd-sample
+  namespace: atest2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
       app: httpd-sample
-      app.kubernetes.io/component: httpd-sample
-      app.kubernetes.io/instance: httpd-sample
-      app.kubernetes.io/name: httpd-sample
-      app.kubernetes.io/part-of: sample-app
-      app.openshift.io/runtime: httpd
-      app.openshift.io/runtime-version: 2.4-el7
-  spec:
-    replicas: 1
-    selector:
-      matchLabels:
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
         app: httpd-sample
-    template:
-      metadata:
-        creationTimestamp: null
-        labels:
-          app: httpd-sample
-          deploymentconfig: httpd-sample
-      spec:
-        containers:
-          - name: httpd-sample
-            image: >-
-              image-registry.openshift-image-registry.svc:5000/atest/httpd-sample@sha256:2623160c600effe40927290405abd408c506fc8563fef12a83828850f6bf022e
-            ports:
-              - containerPort: 8080
-                protocol: TCP
-              - containerPort: 8443
-                protocol: TCP
-            resources: { }
-            terminationMessagePath: /dev/termination-log
-            terminationMessagePolicy: File
-            imagePullPolicy: Always
-        restartPolicy: Always
-        terminationGracePeriodSeconds: 30
-        dnsPolicy: ClusterFirst
-        securityContext: { }
-        schedulerName: default-scheduler
-    strategy:
-      type: RollingUpdate
-      rollingUpdate:
-        maxUnavailable: 25%
-        maxSurge: 25%
-    revisionHistoryLimit: 10
-    progressDeadlineSeconds: 600
+        deploymentconfig: httpd-sample
+    spec:
+      containers:
+        - name: httpd-sample
+          image: >-
+            registry.redhat.io/rhscl/httpd-24-rhel7:2.4-147
+          ports:
+            - containerPort: 8080
+              protocol: TCP
+            - containerPort: 8443
+              protocol: TCP
+          volumeMounts:
+            - name: httpvolume
+              mountPath: /opt/rh/httpd24/root/var/www/html
+          resources: { }
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: Always
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      securityContext: { }
+      schedulerName: default-scheduler
+      volumes:
+        - name: httpvolume
+          configMap:
+            name: helloocp
+            defaultMode: 420
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 25%
+      maxSurge: 25%
+  revisionHistoryLimit: 10
+  progressDeadlineSeconds: 600

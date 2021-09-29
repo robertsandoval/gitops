@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: httpd-24-rhel7
-  namespace: atest1
+  namespace: atest3
   labels:
     app: httpd-sample
 spec:

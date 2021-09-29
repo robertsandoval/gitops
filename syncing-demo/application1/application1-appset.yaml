@@ -16,8 +16,7 @@ spec:
       project: sync-demo
       syncPolicy:
         automated:
-          prune: true
-          selfHeal: true
+          prune: false
       source:
         repoURL: https://github.com/robertsandoval/gitops.git
         targetRevision: master
