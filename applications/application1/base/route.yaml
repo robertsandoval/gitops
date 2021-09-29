@@ -1,0 +1,17 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  name: httpd-application1
+  namespace: application1-httpd
+  labels:
+    app: applicaton1
+    app.kubernetes.io/instance: application1
+spec:
+  path: /hello.txt
+  to:
+    kind: Service
+    name: httpd-application1
+    weight: 100
+  port:
+    targetPort: 8080-tcp
+  wildcardPolicy: None
