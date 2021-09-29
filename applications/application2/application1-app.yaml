@@ -1,15 +1,15 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application2-app
+  name: application2
   namespace: openshift-gitops
 spec:
   destination:
     name: wl00
-    namespace: application2-httpd
-  project: sync-demo
+    namespace: application2
+  project: applications
   source:
-    path: applications/application2/base
+    path: applications/application1/default
     repoURL: 'https://github.com/robertsandoval/gitops.git'
   syncPolicy:
     automated:
