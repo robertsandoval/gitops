@@ -7,16 +7,16 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: httpd-sample
+      app: application1
   template:
     metadata:
       creationTimestamp: null
       labels:
         app: application1
-        deploymentconfig: httpd-sample
+        deploymentconfig: application1
     spec:
       containers:
-        - name: httpd-sample
+        - name: application1
           image: >-
             registry.redhat.io/rhscl/httpd-24-rhel7:2.4-147
           ports:
