@@ -9,7 +9,7 @@ spec:
     namespace: application1
   project: applications
   source:
-    path: applications/application1/overlay
+    path: applications/application1/kustomize/overlay
     repoURL: 'https://github.com/robertsandoval/gitops.git'
   syncPolicy:
     automated:

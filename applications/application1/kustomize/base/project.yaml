@@ -1,0 +1,7 @@
+kind: Project
+apiVersion: project.openshift.io/v1
+metadata:
+  name: application1-kustomize
+spec:
+  finalizers:
+    - kubernetes

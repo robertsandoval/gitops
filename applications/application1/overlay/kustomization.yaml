@@ -1,6 +1,0 @@
-resources:
-- ../base/configmap.yaml
-- ../base/deployment.yaml
-- ../base/project.yaml
-- ../base/route.yaml
-- ../base/service.yaml
