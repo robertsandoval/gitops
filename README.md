@@ -26,7 +26,7 @@ Use Case: I have a multiple applications I want to deploy to a single cluster
 1..N Applications -> 1 Cluster  
 
 Considerations:  
-If deploying multiple Applications you can only do the following:
+If deploying multiple Applications you can only do the following:  
 All applications into 1 namespace
 
 For example:  
