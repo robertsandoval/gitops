@@ -39,7 +39,7 @@ spec:
       volumes:
         - name: httpvolume
           configMap:
-            name: helloocp
+            name: httpd
             defaultMode: 420
   strategy:
     type: RollingUpdate

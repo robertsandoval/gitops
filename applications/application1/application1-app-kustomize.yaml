@@ -6,7 +6,7 @@ metadata:
 spec:
   destination:
     name: wl00
-    namespace: application1-httpd
+    namespace: application1
   project: applications
   source:
     path: applications/application1/overlay
