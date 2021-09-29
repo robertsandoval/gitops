@@ -20,7 +20,7 @@ spec:
       source:
         repoURL: https://github.com/robertsandoval/gitops.git
         targetRevision: master
-        path: syncing-demo/application2/base
+        path: applications/application2/base
       destination:
         server: '{{server}}'
         namespace: application2-httpd

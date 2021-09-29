@@ -12,7 +12,7 @@ spec:
     metadata:
       creationTimestamp: null
       labels:
-        app: httpd-sample
+        app: application1
         deploymentconfig: httpd-sample
     spec:
       containers:

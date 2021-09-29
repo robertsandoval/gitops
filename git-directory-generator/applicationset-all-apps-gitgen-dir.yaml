@@ -9,7 +9,7 @@ spec:
         repoURL: https://github.com/robertsandoval/gitops.git
         revision: master
         directories:
-          - path: syncing-demo/*
+          - path: applications/*
   template:
     metadata:
       name: '{{path.basename}}'

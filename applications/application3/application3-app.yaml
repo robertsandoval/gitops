@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: application3-app
+  namespace: openshift-gitops
+spec:
+  destination:
+    name: wl00
+    namespace: application3-httpd
+  project: sync-demo
+  source:
+    path: applications/application3/base
+    repoURL: 'https://github.com/robertsandoval/gitops.git'
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+

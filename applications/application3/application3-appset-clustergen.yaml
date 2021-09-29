@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: application1-appset
+  name: application3-appset
   namespace: openshift-gitops
 spec:
   generators:
@@ -11,7 +11,7 @@ spec:
             cluster: managed
   template:
     metadata:
-      name: '{{name}}-httpd-App1-fromAppSetCG'
+      name: '{{name}}-httpd-App3-fromAppSetCG'
     spec:
       project: sync-demo
       syncPolicy:
@@ -20,7 +20,7 @@ spec:
       source:
         repoURL: https://github.com/robertsandoval/gitops.git
         targetRevision: master
-        path: syncing-demo/application1/base
+        path: applications/application3/base
       destination:
         server: '{{server}}'
-        namespace: application1-httpd
+        namespace: application3-httpd

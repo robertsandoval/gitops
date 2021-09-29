@@ -1,6 +1,0 @@
-- op: add
-  path: /subjects/-
-  value:
-    kind: Group
-    name: base_group # Name is case sensitive
-    apiGroup: rbac.authorization.k8s.io

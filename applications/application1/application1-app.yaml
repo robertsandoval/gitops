@@ -9,7 +9,7 @@ spec:
     namespace: application1-httpd
   project: sync-demo
   source:
-    path: syncing-demo/application1/base
+    path: applications/application1/base
     repoURL: 'https://github.com/robertsandoval/gitops.git'
   syncPolicy:
     automated:
