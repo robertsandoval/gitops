@@ -1,5 +1,5 @@
 - op: replace
   path: /data
-  value: |
+  value:
     hello.txt: |
       Hello from kustomize application 1
