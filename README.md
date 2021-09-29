@@ -3,7 +3,7 @@
 * unable to set cascade options. Will always be cascade=true
 
 
-#Cluster Generator
+# Cluster Generator
 Use Case: I have a single application I want to deploy multiple clusters
 
 1 Application -> 0..N Clusters  
