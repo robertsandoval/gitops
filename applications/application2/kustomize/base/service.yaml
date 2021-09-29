@@ -2,7 +2,7 @@ kind: Service
 apiVersion: v1
 metadata:
   name: httpd
-  namespace: application2
+  namespace: application2-kustomize
   labels:
     app: httpd
 spec:

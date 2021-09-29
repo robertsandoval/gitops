@@ -2,7 +2,7 @@ kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
   name: httpd
-  namespace: application2
+  namespace: application2-kustomize
   labels:
     app: httpd
 spec:
