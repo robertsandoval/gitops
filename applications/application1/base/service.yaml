@@ -1,10 +1,10 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: httpd-24-rhel7
+  name: httpd-application1
   namespace: application1-httpd
   labels:
-    app: httpd-sample
+    app: applicaton1
 spec:
   ports:
     - name: 8080-tcp
@@ -16,4 +16,4 @@ spec:
       port: 8443
       targetPort: 8443
   selector:
-    app: httpd-sample
+    app: application1
