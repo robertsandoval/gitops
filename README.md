@@ -26,16 +26,17 @@ Use Case: I have a multiple applications I want to deploy to a single cluster
 1..N Applications -> 1 Cluster  
 
 Considerations:  
-If deploying multiple Applications you can only do the following:  
-All applications into 1 namespace
+If deploying multiple Applications you can only do the following: 
 
+All applications into 1 namespace  
 For example:  
 
       destination:
         server: https://kubernetes.default.svc
         namespace: mytestproject
 
-Or deploy an application into a namespace derived from the basename
+Or deploy an application into a namespace derived from the basename  
+For example:  
 
       destination:
         server: https://kubernetes.default.svc
