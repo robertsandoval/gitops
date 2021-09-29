@@ -1,4 +1,4 @@
-##Nuances to ApplicationSet Generators
+## Nuances to ApplicationSet Generators
 
 * unable to set cascade options. Will always be cascade=true
 
