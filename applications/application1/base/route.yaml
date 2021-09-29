@@ -9,7 +9,7 @@ spec:
   path: /hello.txt
   to:
     kind: Service
-    name: httpd-application1
+    name: httpd
     weight: 100
   port:
     targetPort: 8080-tcp
