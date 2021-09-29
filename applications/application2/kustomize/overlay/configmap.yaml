@@ -2,4 +2,4 @@
   path: /data
   value:
     hello.txt: |
-      Hello from kustomize application 1
+      Hello from kustomize application 2
