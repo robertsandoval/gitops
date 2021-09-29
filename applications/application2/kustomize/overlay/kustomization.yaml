@@ -1,0 +1,9 @@
+resources:
+  - ../base
+
+patches:
+  - target:
+      version: v1
+      kind: ConfigMap
+      name: httpd
+    path: configmap.yaml
