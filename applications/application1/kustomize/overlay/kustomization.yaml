@@ -1,2 +1,12 @@
 resources:
-- ../base
+  - ../base
+
+patchesStrategicMerge:
+  - |-
+    apiVersion: v1
+    kind: ConfigMap
+    metadata:
+      name: httpd
+    data:
+      hello.txt : |
+        Hello From Kustomize Application 1
