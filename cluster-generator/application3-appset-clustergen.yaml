@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: application3-appset
+  namespace: openshift-gitops
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            cluster: managed
+  template:
+    metadata:
+      name: '{{name}}-httpd-app3-from-app-set-cg'
+    spec:
+      project: applications
+      syncPolicy:
+        automated:
+          prune: true
+      source:
+        repoURL: https://github.com/robertsandoval/gitops.git
+        targetRevision: master
+        path: applications/application3/default
+      destination:
+        server: '{{server}}'
+        namespace: application1-httpd
