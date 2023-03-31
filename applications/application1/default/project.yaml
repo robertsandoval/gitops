@@ -2,6 +2,8 @@ kind: Project
 apiVersion: project.openshift.io/v1
 metadata:
   name: application1
+  labels:
+     argocd.argoproj.io/managed-by:openshift-gitops
 spec:
   finalizers:
     - kubernetes
